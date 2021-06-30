@@ -1,2 +1,3 @@
 # wishList
-Tableview 기반의 ios 앱
+tableview 기반의 ios 앱입니다.
+

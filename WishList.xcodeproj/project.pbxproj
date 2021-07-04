@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		4C125A89268C762A0014D128 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C125A88268C762A0014D128 /* AppDelegate.swift */; };
 		4C125A8B268C762A0014D128 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C125A8A268C762A0014D128 /* SceneDelegate.swift */; };
-		4C125A8D268C762A0014D128 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C125A8C268C762A0014D128 /* ViewController.swift */; };
 		4C125A90268C762A0014D128 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C125A8E268C762A0014D128 /* Main.storyboard */; };
 		4C125A93268C762A0014D128 /* WishList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C125A91268C762A0014D128 /* WishList.xcdatamodeld */; };
 		4C125A95268C762B0014D128 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C125A94268C762B0014D128 /* Assets.xcassets */; };
 		4C125A98268C762B0014D128 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C125A96268C762B0014D128 /* LaunchScreen.storyboard */; };
 		4C125AA3268C762B0014D128 /* WishListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C125AA2268C762B0014D128 /* WishListTests.swift */; };
 		4C125AAE268C762B0014D128 /* WishListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C125AAD268C762B0014D128 /* WishListUITests.swift */; };
+		4C125ABC269180D30014D128 /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C125ABB269180D30014D128 /* WishListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,6 @@
 		4C125A85268C762A0014D128 /* WishList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WishList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C125A88268C762A0014D128 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C125A8A268C762A0014D128 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4C125A8C268C762A0014D128 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4C125A8F268C762A0014D128 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C125A92268C762A0014D128 /* WishList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WishList.xcdatamodel; sourceTree = "<group>"; };
 		4C125A94268C762B0014D128 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +50,7 @@
 		4C125AA9268C762B0014D128 /* WishListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WishListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C125AAD268C762B0014D128 /* WishListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListUITests.swift; sourceTree = "<group>"; };
 		4C125AAF268C762B0014D128 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C125ABB269180D30014D128 /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,12 +103,12 @@
 			children = (
 				4C125A88268C762A0014D128 /* AppDelegate.swift */,
 				4C125A8A268C762A0014D128 /* SceneDelegate.swift */,
-				4C125A8C268C762A0014D128 /* ViewController.swift */,
 				4C125A8E268C762A0014D128 /* Main.storyboard */,
 				4C125A94268C762B0014D128 /* Assets.xcassets */,
 				4C125A96268C762B0014D128 /* LaunchScreen.storyboard */,
 				4C125A99268C762B0014D128 /* Info.plist */,
 				4C125A91268C762A0014D128 /* WishList.xcdatamodeld */,
+				4C125ABB269180D30014D128 /* WishListViewController.swift */,
 			);
 			path = WishList;
 			sourceTree = "<group>";
@@ -262,7 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C125A93268C762A0014D128 /* WishList.xcdatamodeld in Sources */,
-				4C125A8D268C762A0014D128 /* ViewController.swift in Sources */,
+				4C125ABC269180D30014D128 /* WishListViewController.swift in Sources */,
 				4C125A89268C762A0014D128 /* AppDelegate.swift in Sources */,
 				4C125A8B268C762A0014D128 /* SceneDelegate.swift in Sources */,
 			);

@@ -30,7 +30,14 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     //UITableViewDelegate
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        //cell 터치시 consol
         print("--> \(indexPath.row)")
         }
 
+}
+
+class ListCell: UITableViewCell {
+    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var costLabel: UILabel!
 }

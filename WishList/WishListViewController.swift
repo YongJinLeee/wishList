@@ -16,6 +16,10 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
 
     }
+    @IBAction func unwindMain (segue : UIStoryboardSegue) {
+        
+    }
+    
     //UITableViewDataSource
     //TableView cell 개수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -50,6 +54,8 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     //UITableViewDelegate
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "showDetail", sender: nil)
         //cell 터치시 console message 확인
         print("--> \(indexPath.row)")
         }

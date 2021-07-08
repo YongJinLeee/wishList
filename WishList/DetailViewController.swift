@@ -2,7 +2,6 @@
 //  DetailViewController.swift
 //  WishList
 //
-//  Created by LeeYongJin on 2021/07/08.
 //
 // modally present
 import UIKit
@@ -14,6 +13,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailImg: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
+    
+    
     
     var name: String?
     var cost: Int?

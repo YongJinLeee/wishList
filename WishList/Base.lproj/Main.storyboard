@@ -141,10 +141,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="DetailImg" destination="i98-xu-6Nq" id="rQ6-Sn-wvO"/>
                         <outlet property="closed" destination="Ib3-I5-5f8" id="NoB-vC-Aan"/>
-                        <outlet property="costList" destination="LAw-CG-gdt" id="Hzt-A0-RKf"/>
-                        <outlet property="nameList" destination="b8z-JR-btr" id="2nW-XM-umR"/>
+                        <outlet property="costLabel" destination="LAw-CG-gdt" id="QGN-33-oPG"/>
+                        <outlet property="detailImg" destination="i98-xu-6Nq" id="j1P-cX-0SB"/>
+                        <outlet property="nameLabel" destination="b8z-JR-btr" id="Q4v-st-qXW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B0e-o5-fcU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

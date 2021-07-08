@@ -28,6 +28,7 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
 
     }
+    //viewController 초기화면 돌아오기
     @IBAction func unwindMain (segue : UIStoryboardSegue) {
         
     }

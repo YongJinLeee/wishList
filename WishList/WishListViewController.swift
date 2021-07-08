@@ -11,6 +11,18 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     let nameList = ["PS5", "Zero Dawn", "Forbidden", "Miles", "LOU2"]
     let costList = [680000, 28000, 69000, 32000, 89000]
+    
+    // DetailViewController에 데이터 전달
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            let ViewCtrl = segue.destination as? DetailViewController
+            
+            if let index = sender as? Int {
+                ViewCtrl?.name = nameList[index]
+                ViewCtrl?.cost = costList[index]
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,23 +51,12 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.costLabel.text = "\(costList[indexPath.row])"
         
         return cell
-        
-        //   if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ListCell {
-//        
-//            let img = UIImage(named : "\(nameList[indexPath.row]).jpg")
-//            cell.imgView.image = img
-//            cell.nameLabel.text = nameList[indexPath.row]
-//            cell.costLabel.text = "\(costList[indexPath.row])"
-//          return cell
-//         } else {
-//              return UITableViewCell()
-//         }
     }
     
     //UITableViewDelegate
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         
-        performSegue(withIdentifier: "showDetail", sender: nil)
+        performSegue(withIdentifier: "showDetail", sender: indexPath.row)
         //cell 터치시 console message 확인
         print("--> \(indexPath.row)")
         }

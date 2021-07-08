@@ -9,7 +9,15 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    
     @IBOutlet weak var closed: UIButton!
+    @IBOutlet weak var detailImg: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var costLabel: UILabel!
+    
+    var name: String?
+    var cost: Int?
+    
     
     @IBAction func close(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -17,19 +25,16 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+      //들여올 데이터 셋팅
+        updataInfo()
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func updataInfo() {
+        if let name = self.name, let cost = self.cost {
+            let img = UIImage(named: "\(name).jpg")
+            detailImg.image = img
+            nameLabel.text = "\(name)"
+            costLabel.text = "\(cost)"
+        }
     }
-    */
-
 }

@@ -25,21 +25,32 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
     // TableView 표시형태(재사용시)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //setting된 값을 ListCell를 통해 표현해야 하기때문에 옵셔널로 캐스팅
-                 if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ListCell {
+        //guard - else 로 옵셔널 바인딩 방식 변경
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ListCell else {
+            return UITableViewCell()
+        }
+        let img = UIImage(named: "\(nameList[indexPath.row]).jpg")
+        cell.imgView.image = img
+        cell.nameLabel.text = nameList[indexPath.row]
+        cell.costLabel.text = "\(costList[indexPath.row])"
         
-            let img = UIImage(named : "\(nameList[indexPath.row]).jpg")
-            cell.imgView.image = img
-            cell.nameLabel.text = nameList[indexPath.row]
-            cell.costLabel.text = "\(costList[indexPath.row])"
-          return cell
-         } else {
-              return UITableViewCell()
-         }
+        return cell
+        
+        //   if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ListCell {
+//        
+//            let img = UIImage(named : "\(nameList[indexPath.row]).jpg")
+//            cell.imgView.image = img
+//            cell.nameLabel.text = nameList[indexPath.row]
+//            cell.costLabel.text = "\(costList[indexPath.row])"
+//          return cell
+//         } else {
+//              return UITableViewCell()
+//         }
     }
     
     //UITableViewDelegate
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        //cell 터치시 consol
+        //cell 터치시 console message 확인
         print("--> \(indexPath.row)")
         }
 

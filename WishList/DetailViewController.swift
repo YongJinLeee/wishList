@@ -27,14 +27,14 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       //들여올 데이터 셋팅
-        updataInfo()
+        updateInfo()
     }
 
-    func updataInfo() {
+    func updateInfo() {
         if let name = self.name, let cost = self.cost {
             let img = UIImage(named: "\(name).jpg")
             detailImg.image = img
-            nameLabel.text = "\(name)"
+            nameLabel.text = name
             costLabel.text = "\(cost)"
         }
     }

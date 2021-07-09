@@ -16,7 +16,6 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             let ViewCtrl = segue.destination as? DetailViewController
-            
             if let index = sender as? Int {
                 ViewCtrl?.name = nameList[index]
                 ViewCtrl?.cost = costList[index]
@@ -26,12 +25,12 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    }
-    //viewController 초기화면 돌아오기
-    @IBAction func unwindMain (segue : UIStoryboardSegue) {
         
     }
+//    //viewController 초기화면 돌아오기
+//    @IBAction func unwindMain (segue : UIStoryboardSegue) {
+//
+//    }
     
     //UITableViewDataSource
     //TableView cell 개수
@@ -55,13 +54,12 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     //UITableViewDelegate
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        
-        performSegue(withIdentifier: "showDetail", sender: indexPath.row)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //cell 터치시 console message 확인
-        print("--> \(indexPath.row)")
+        print("Index : \(indexPath.row)")
+        performSegue(withIdentifier: "showDetail", sender: indexPath.row)
         }
-
+//러닝결과 터치가 왜 한 템포씩 느릴까..?
 }
 
 class ListCell: UITableViewCell {

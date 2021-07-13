@@ -15,25 +15,41 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
     //  > New) Struct WishItemInfo
     
     // View
-    //  - ListCell (imgView, nameLabel, costLabel)
+    //  - ListCell
     //  > View들은 ViewModel을 통해서 구성됨
-    //  > 클래스에 필요한 data를 ViewModel로 부터 받아 View Update진행
+    //  > ListCell에 필요한 data를 ViewModel로 부터 받아 View Update진행
     
     // ViewModel
-    //  - New) DetailViewModel
-    //  > View Layer에서 필요한 Method 작성
-    //  > Model 포함 할 것 (wishItemInfo)
+    //  - New) WishListViewModel
+    //  > View Layer에서 필요한 Method 작성 <
+    //  > Model 포함 할 것 (wishItemInfo'들' 을 갖고 있어야함)
     
-    let nameList = ["PS5", "Zero Dawn", "Forbidden", "Miles", "LOU2"]
-    let costList = [680000, 28000, 69000, 32000, 89000]
+    // 물건 리스트
+    // 기존에 분리되어있던 이름과 가격 정보를 Struct를 사용해 하나의 의미있는 정보로 묶음 처리
+    let wishItemList: [WishItemInfo] = [
+        WishItemInfo(name: "PS5", cost: 680000),
+        WishItemInfo(name: "Zero Dawn", cost: 28000),
+        WishItemInfo(name: "Forbidden", cost: 69000),
+        WishItemInfo(name: "Miles", cost: 32000),
+        WishItemInfo(name: "LOU2", cost: 89000)
+    ]
+    
+//    let nameList = ["PS5", "Zero Dawn", "Forbidden", "Miles", "LOU2"]
+//    let costList = [680000, 28000, 69000, 32000, 89000]
     
     // DetailViewController에 데이터 전달
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             let ViewCtrl = segue.destination as? DetailViewController
             if let index = sender as? Int {
-                ViewCtrl?.name = nameList[index]
-                ViewCtrl?.cost = costList[index]
+                
+                let wishItemInfoToDetail = wishItemList[index]
+                
+                ViewCtrl?.name = wishItemInfoToDetail.name
+                ViewCtrl?.cost = wishItemInfoToDetail.cost
+         
+//             ViewCtrl?.name = nameList[index]
+//             ViewCtrl?.cost = costList[index]
             }
         }
     }
@@ -50,7 +66,7 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
     //UITableViewDataSource
     //TableView cell 개수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return costList.count
+        return wishItemList.count
         //array 개수 세기
     }
     // TableView 표시형태(재사용시)
@@ -60,10 +76,16 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ListCell else {
             return UITableViewCell()
         }
-        let img = UIImage(named: "\(nameList[indexPath.row]).jpg")
-        cell.imgView.image = img
-        cell.nameLabel.text = nameList[indexPath.row]
-        cell.costLabel.text = "\(costList[indexPath.row])"
+        
+        let wishItemInfomation = wishItemList[indexPath.row]
+        cell.imgView.image = wishItemInfomation.img
+        cell.nameLabel.text = wishItemInfomation.name
+        cell.costLabel.text = "\(wishItemInfomation.cost)"
+        
+//        let img = UIImage(named: "\(nameList[indexPath.row]).jpg")
+//        cell.imgView.image = img
+//        cell.nameLabel.text = nameList[indexPath.row]
+//        cell.costLabel.text = "\(costList[indexPath.row])"
         
         return cell
     }
@@ -74,7 +96,7 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
         print("Index : \(indexPath.row)")
         performSegue(withIdentifier: "showDetail", sender: indexPath.row)
         }
-//러닝결과 터치가 왜 한 템포씩 느릴까..? <- didDeselectRowAt으로 되어있었음. 해결
+//러닝결과 터치가 왜 한 템포씩 느릴까..? <- didDeselectRowAt(선택해제)으로 되어있었음. 해결
 }
 
 class ListCell: UITableViewCell {
@@ -83,6 +105,8 @@ class ListCell: UITableViewCell {
     @IBOutlet weak var costLabel: UILabel!
 }
 
+// 각 물건의 정보 구조체.
+// struct로 관리시 정보 입출 용이
 struct WishItemInfo {
     let name: String
     let cost: Int

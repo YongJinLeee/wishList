@@ -42,11 +42,14 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
         if segue.identifier == "showDetail" {
             let ViewCtrl = segue.destination as? DetailViewController
             if let index = sender as? Int {
-                
                 let wishItemInfoToDetail = wishItemList[index]
                 
-                ViewCtrl?.name = wishItemInfoToDetail.name
-                ViewCtrl?.cost = wishItemInfoToDetail.cost
+                // DetailViewController에서 넘겨받을 정보의 형태(type)를 구조체 WishItemInfo로 변경
+                ViewCtrl?.wishItemInfoFromWishList = wishItemInfoToDetail
+                
+                //변수명을 통일하면 뭐가 뭔지 모르니 알아보기 쉽게.
+//             ViewCtrl?.name = wishItemInfoToDetail.name
+//             ViewCtrl?.cost = wishItemInfoToDetail.cost
          
 //             ViewCtrl?.name = nameList[index]
 //             ViewCtrl?.cost = costList[index]

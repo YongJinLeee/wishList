@@ -23,17 +23,16 @@ class DetailViewController: UIViewController {
     //  > View Layer에서 필요한 Method 작성
     //  > Model 포함 할 것 (wishItemInfo)
     
-    
-    
+
     @IBOutlet weak var closed: UIButton!
     @IBOutlet weak var detailImg: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
     
+    var wishItemInfoFromWishList: WishItemInfo?
     
-    
-    var name: String?
-    var cost: Int?
+//    var name: String?
+//    var cost: Int?
     
     
     @IBAction func close(_ sender: Any) {
@@ -47,11 +46,18 @@ class DetailViewController: UIViewController {
     }
 
     func updateInfo() {
-        if let name = self.name, let cost = self.cost {
-            let img = UIImage(named: "\(name).jpg")
-            detailImg.image = img
-            nameLabel.text = name
-            costLabel.text = "\(cost)"
+        
+        if let wishItemInfo = self.wishItemInfoFromWishList {
+            detailImg.image = wishItemInfo.img
+            nameLabel.text = wishItemInfo.name
+            costLabel.text = "\(wishItemInfo.cost)"
         }
+        
+//        if let name = self.name, let cost = self.cost {
+//            let img = UIImage(named: "\(name).jpg")
+//            detailImg.image = img
+//            nameLabel.text = name
+//            costLabel.text = "\(cost)"
+//        }
     }
 }

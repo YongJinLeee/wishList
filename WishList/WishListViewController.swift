@@ -9,6 +9,21 @@ import UIKit
 
 class WishListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    // MVVM 리팩토링
+    // Model
+    //  - nameList와 costList의 Data 상호 연결성 확보 필요
+    //  > New) Struct WishItemInfo
+    
+    // View
+    //  - ListCell (imgView, nameLabel, costLabel)
+    //  > View들은 ViewModel을 통해서 구성됨
+    //  > 클래스에 필요한 data를 ViewModel로 부터 받아 View Update진행
+    
+    // ViewModel
+    //  - New) DetailViewModel
+    //  > View Layer에서 필요한 Method 작성
+    //  > Model 포함 할 것 (wishItemInfo)
+    
     let nameList = ["PS5", "Zero Dawn", "Forbidden", "Miles", "LOU2"]
     let costList = [680000, 28000, 69000, 32000, 89000]
     
@@ -59,11 +74,25 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
         print("Index : \(indexPath.row)")
         performSegue(withIdentifier: "showDetail", sender: indexPath.row)
         }
-//러닝결과 터치가 왜 한 템포씩 느릴까..?
+//러닝결과 터치가 왜 한 템포씩 느릴까..? <- didDeselectRowAt으로 되어있었음. 해결
 }
 
 class ListCell: UITableViewCell {
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
+}
+
+struct WishItemInfo {
+    let name: String
+    let cost: Int
+    
+    var img: UIImage? {
+        return UIImage(named: "\(name).jpg")
+    }
+    
+    init(name: String, cost: Int) {
+        self.name = name
+        self.cost = cost
+    }
 }

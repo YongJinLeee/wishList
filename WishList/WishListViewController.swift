@@ -38,7 +38,7 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
                 let wishItemInfoToDetail = viewModel.ItemInfo(at: index)
                 
                 // DetailViewController에서 넘겨받을 정보의 형태(type)를 구조체 WishItemInfo로 변경
-                ViewCtrl?.wishItemInfoFromWishList = wishItemInfoToDetail
+                ViewCtrl?.viewModel.wishItemInfoFromWishList = wishItemInfoToDetail
                 
                 //변수명을 통일하면 뭐가 뭔지 모르니 알아보기 쉽게.
 //             ViewCtrl?.name = wishItemInfoToDetail.name

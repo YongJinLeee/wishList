@@ -33,12 +33,7 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
             let ViewCtrl = segue.destination as? DetailViewController
             if let index = sender as? Int {
                 let wishItemInfoToDetail = viewModel.ItemInfo(at: index)
-                
-                // DetailViewController에서 넘겨받을 정보의 형태(type)를 구조체 WishItemInfo로 변경
-                
                 ViewCtrl?.viewModel.modelUpdate(model: wishItemInfoToDetail)
-//                ViewCtrl?.viewModel.wishItemInfoFromWishList = wishItemInfoToDetail
-                //직접 접근보다는 데이터에 변동이 생겼을 때를 상정하여 함수를 통해 접근
             }
         }
     }

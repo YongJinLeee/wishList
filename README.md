@@ -12,7 +12,7 @@ Custom Cell을 이용한 기본적인 앱 구현 및 기능 remind
 ----------------
 
 
-<center><img src="https://user-images.githubusercontent.com/40759743/124763147-9b4f6380-df6e-11eb-93cb-01c53cd9b005.png"></center>
+<p aling = "center"><img src="https://user-images.githubusercontent.com/40759743/124763147-9b4f6380-df6e-11eb-93cb-01c53cd9b005.png"></p>
 
 ----------------
 

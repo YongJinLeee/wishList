@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  WishList
 //
-//  Created by LeeYongJin on 2021/06/30.
+//  Created by LeeYongJin
 //
 
 import UIKit

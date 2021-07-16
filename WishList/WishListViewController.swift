@@ -2,7 +2,7 @@
 //  WishListViewController.swift
 //  WishList
 //
-//  Created by LeeYongJin on 2021/07/04.
+//  Created by LeeYongJin
 //
 
 import UIKit

@@ -2,6 +2,7 @@
 //  DetailViewController.swift
 //  WishList
 //
+//  Created by LeeYongJin
 //
 // modally present
 import UIKit

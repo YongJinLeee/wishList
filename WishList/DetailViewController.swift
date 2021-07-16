@@ -22,25 +22,17 @@ class DetailViewController: UIViewController {
     //  - New) DetailViewModel
     //  > View Layer에서 필요한 Method 작성
     //  > Model 포함 할 것
-    
 
     @IBOutlet weak var closed: UIButton!
     @IBOutlet weak var detailImg: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
-    
-//    var wishItemInfoFromWishList: WishItemInfo?
-    
+
     var viewModel = DetailViewModel()
-    
-//    var name: String?
-//    var cost: Int?
-    
     
     @IBAction func close(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
       //들여올 데이터 셋팅
@@ -54,19 +46,9 @@ class DetailViewController: UIViewController {
             nameLabel.text = wishItemInfo.name
             costLabel.text = "\(wishItemInfo.cost)"
         }
-        
-//        if let name = self.name, let cost = self.cost {
-//            let img = UIImage(named: "\(name).jpg")
-//            detailImg.image = img
-//            nameLabel.text = name
-//            costLabel.text = "\(cost)"
-//        }
     }
 }
-
-
 class DetailViewModel {
-    
     //Model
     var wishItemInfoFromWishList: WishItemInfo?
     

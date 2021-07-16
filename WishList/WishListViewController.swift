@@ -27,9 +27,6 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
     // View와 Model은 상호 직접 접근 하지 않음
     let viewModel =  WishListViewModel()
     
-//    let nameList = ["PS5", "Zero Dawn", "Forbidden", "Miles", "LOU2"]
-//    let costList = [680000, 28000, 69000, 32000, 89000]
-    
     // DetailViewController에 데이터 전달
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
@@ -42,13 +39,6 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
                 ViewCtrl?.viewModel.modelUpdate(model: wishItemInfoToDetail)
 //                ViewCtrl?.viewModel.wishItemInfoFromWishList = wishItemInfoToDetail
                 //직접 접근보다는 데이터에 변동이 생겼을 때를 상정하여 함수를 통해 접근
-                
-                //변수명을 통일하면 뭐가 뭔지 모르니 알아보기 쉽게.
-//             ViewCtrl?.name = wishItemInfoToDetail.name
-//             ViewCtrl?.cost = wishItemInfoToDetail.cost
-         
-//             ViewCtrl?.name = nameList[index]
-//             ViewCtrl?.cost = costList[index]
             }
         }
     }
@@ -59,7 +49,6 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
 //    //viewController 초기화면 돌아오기
 //    @IBAction func unwindMain (segue : UIStoryboardSegue) {
-//
 //    }
     
     //UITableViewDataSource
@@ -70,8 +59,7 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     // TableView 표시형태(재사용시)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //setting된 값을 ListCell를 통해 표현해야 하기때문에 옵셔널로 캐스팅
-        //guard - else 로 옵셔널 바인딩 방식 변경
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ListCell else {
             return UITableViewCell()
         }
@@ -79,30 +67,15 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
         let itemInfoSetToList = viewModel.ItemInfo(at: indexPath.row)
         cell.cellDataUpdate(Info: itemInfoSetToList)
         
-    
-        //View가 할일
-//        let wishItemInfomation = viewModel.ItemInfo(at: indexPath.row)
-//        cell.imgView.image = wishItemInfomation.img
-//        cell.nameLabel.text = wishItemInfomation.name
-//        cell.costLabel.text = "\(wishItemInfomation.cost)"
-        
-//        let img = UIImage(named: "\(nameList[indexPath.row]).jpg")
-//        cell.imgView.image = img
-//        cell.nameLabel.text = nameList[indexPath.row]
-//        cell.costLabel.text = "\(costList[indexPath.row])"
-        
         return cell
     }
-    
     //UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //cell 터치시 console message 확인
         print("Index : \(indexPath.row)")
         performSegue(withIdentifier: "showDetail", sender: indexPath.row)
-        }
-
+    }
 }
-
 // View
 class ListCell: UITableViewCell {
     @IBOutlet weak var imgView: UIImageView!
@@ -124,7 +97,6 @@ struct WishItemInfo {
     var img: UIImage? {
         return UIImage(named: "\(name).jpg")
     }
-    
     init(name: String, cost: Int) {
         self.name = name
         self.cost = cost

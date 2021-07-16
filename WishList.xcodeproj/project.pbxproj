@@ -18,6 +18,7 @@
 		4C125ABC269180D30014D128 /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C125ABB269180D30014D128 /* WishListViewController.swift */; };
 		4C125ABE26971F160014D128 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C125ABD26971F160014D128 /* DetailViewController.swift */; };
 		4C125AC026A1B67D0014D128 /* WishItemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C125ABF26A1B67D0014D128 /* WishItemInfo.swift */; };
+		4C125AC226A1BA9F0014D128 /* WishListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C125AC126A1BA9F0014D128 /* WishListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		4C125ABB269180D30014D128 /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
 		4C125ABD26971F160014D128 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		4C125ABF26A1B67D0014D128 /* WishItemInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishItemInfo.swift; sourceTree = "<group>"; };
+		4C125AC126A1BA9F0014D128 /* WishListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				4C125ABB269180D30014D128 /* WishListViewController.swift */,
 				4C125ABD26971F160014D128 /* DetailViewController.swift */,
 				4C125ABF26A1B67D0014D128 /* WishItemInfo.swift */,
+				4C125AC126A1BA9F0014D128 /* WishListViewModel.swift */,
 			);
 			path = WishList;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				4C125ABE26971F160014D128 /* DetailViewController.swift in Sources */,
 				4C125A89268C762A0014D128 /* AppDelegate.swift in Sources */,
 				4C125A8B268C762A0014D128 /* SceneDelegate.swift in Sources */,
+				4C125AC226A1BA9F0014D128 /* WishListViewModel.swift in Sources */,
 				4C125AC026A1B67D0014D128 /* WishItemInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

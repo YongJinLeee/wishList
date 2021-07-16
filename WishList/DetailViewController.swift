@@ -70,4 +70,7 @@ class DetailViewModel {
     //Model
     var wishItemInfoFromWishList: WishItemInfo?
     
+    func modelUpdate(model: WishItemInfo?) {
+        wishItemInfoFromWishList = model
+    }
 }

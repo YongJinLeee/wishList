@@ -38,7 +38,10 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
                 let wishItemInfoToDetail = viewModel.ItemInfo(at: index)
                 
                 // DetailViewController에서 넘겨받을 정보의 형태(type)를 구조체 WishItemInfo로 변경
-                ViewCtrl?.viewModel.wishItemInfoFromWishList = wishItemInfoToDetail
+                
+                ViewCtrl?.viewModel.modelUpdate(model: wishItemInfoToDetail)
+//                ViewCtrl?.viewModel.wishItemInfoFromWishList = wishItemInfoToDetail
+                //직접 접근보다는 데이터에 변동이 생겼을 때를 상정하여 함수를 통해 접근
                 
                 //변수명을 통일하면 뭐가 뭔지 모르니 알아보기 쉽게.
 //             ViewCtrl?.name = wishItemInfoToDetail.name
@@ -73,6 +76,7 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
             return UITableViewCell()
         }
         
+        //View가 할일
         let wishItemInfomation = viewModel.ItemInfo(at: indexPath.row)
         cell.imgView.image = wishItemInfomation.img
         cell.nameLabel.text = wishItemInfomation.name
@@ -92,9 +96,10 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
         print("Index : \(indexPath.row)")
         performSegue(withIdentifier: "showDetail", sender: indexPath.row)
         }
-//러닝결과 터치가 왜 한 템포씩 느릴까..? <- didDeselectRowAt(선택해제)으로 되어있었음. 해결
+
 }
 
+// View
 class ListCell: UITableViewCell {
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!

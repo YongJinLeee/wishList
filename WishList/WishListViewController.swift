@@ -75,12 +75,16 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ListCell else {
             return UITableViewCell()
         }
+        //각 cell에 항목별 data 뿌리기
+        let itemInfoSetToList = viewModel.ItemInfo(at: indexPath.row)
+        cell.cellDataUpdate(Info: itemInfoSetToList)
         
+    
         //View가 할일
-        let wishItemInfomation = viewModel.ItemInfo(at: indexPath.row)
-        cell.imgView.image = wishItemInfomation.img
-        cell.nameLabel.text = wishItemInfomation.name
-        cell.costLabel.text = "\(wishItemInfomation.cost)"
+//        let wishItemInfomation = viewModel.ItemInfo(at: indexPath.row)
+//        cell.imgView.image = wishItemInfomation.img
+//        cell.nameLabel.text = wishItemInfomation.name
+//        cell.costLabel.text = "\(wishItemInfomation.cost)"
         
 //        let img = UIImage(named: "\(nameList[indexPath.row]).jpg")
 //        cell.imgView.image = img
@@ -104,8 +108,13 @@ class ListCell: UITableViewCell {
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
+    
+    func cellDataUpdate(Info: WishItemInfo) {
+        imgView.image = Info.img
+        nameLabel.text = Info.name
+        costLabel.text = "\(Info.cost)"
+    }
 }
-
 // 각 물건의 정보 구조체.
 // struct로 관리시 정보 입출 용이
 struct WishItemInfo {

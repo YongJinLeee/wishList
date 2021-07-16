@@ -12,13 +12,13 @@ Custom Cell을 이용한 기본적인 앱 구현 및 기능 remind
 
 ----------------
 
-###0715(Refactoring 전 --> 후)
+### 0715(Refactoring 전 --> 후)
 
 ![스크린샷 2021-07-17 02 16 40](https://user-images.githubusercontent.com/40759743/125984996-508fd222-6355-4128-b336-2ba5e3eb1eba.png)
 
 ----------------
 
-###0712
+### 0712
 
 <p aling = "center"><img src="https://user-images.githubusercontent.com/40759743/124763147-9b4f6380-df6e-11eb-93cb-01c53cd9b005.png"></p>
 

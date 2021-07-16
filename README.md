@@ -14,8 +14,7 @@ Custom Cell을 이용한 기본적인 앱 구현 및 기능 remind
 
 ###0715(Refactoring 전 --> 후)
 
-![스크린샷 2021-07-17 02 13 01](https://user-images.githubusercontent.com/40759743/125984860-b3139f4e-58a5-41c3-ae0d-710633462093.png)
-
+![스크린샷 2021-07-17 02 16 40](https://user-images.githubusercontent.com/40759743/125984996-508fd222-6355-4128-b336-2ba5e3eb1eba.png)
 
 ----------------
 

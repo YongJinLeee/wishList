@@ -56,53 +56,18 @@ class WishListViewController: UIViewController, UICollectionViewDataSource, UICo
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GridCell", for: indexPath) as? GridCell else {
             return UICollectionViewCell()
     }
-        let itemInfoSetToList = viewModel.ItemInfo(at: indexPath.row)
+        let itemInfoSetToList = viewModel.ItemInfo(at: indexPath.item)
         cell.cellDataUpdate(Info: itemInfoSetToList)
         return cell
 }
-    
-    
-    
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath ) -> UICollectionViewCell {
-//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? ListCell else {
-//            return UICollectionViewCell()
-//        }
-//
-//        let itemInfoSetToList = viewModel.ItemInfo(at: indexPath.row)
-//        cell.cellDataUpdate(Info: itemInfoSetToList)
-//        return cell
-//
-//    }
-//    UICollectionViewDelegate : cell 터치 및 클릭 되었을 때의 동작은?
 
-    
+//    UICollectionViewDelegate : cell 터치 및 클릭 되었을 때의 동작은
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showDetail", sender: indexPath.item)
+            
+    }
     
 //    UICollectionViewDelegateLayoutFlow : 기기 별 상이한 화면 크기에 따라 cell size 계산 및 배치
-//    //UITableViewDataSource
-//    //TableView cell 개수
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return viewModel.numOfItem
-//        //array 개수 세기
-//    }
-//    // TableView 표시형태(재사용시)
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ListCell else {
-//            return UITableViewCell()
-//        }
-//        //각 cell에 항목별 data 뿌리기
-//        let itemInfoSetToList = viewModel.ItemInfo(at: indexPath.row)
-//        cell.cellDataUpdate(Info: itemInfoSetToList)
-//
-//        return cell
-//    }
-//    //UITableViewDelegate
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        //cell 터치시 console message 확인
-//        print("Index : \(indexPath.row)")
-//        performSegue(withIdentifier: "showDetail", sender: indexPath.row)
-//    }
-//}
 
 }
     

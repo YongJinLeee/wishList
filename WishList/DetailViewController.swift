@@ -28,7 +28,10 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailImg: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
-
+    @IBOutlet weak var nameLabelCenterX: NSLayoutConstraint!
+    @IBOutlet weak var costLabelCenterX: NSLayoutConstraint!
+    @IBOutlet weak var imageViewCenterX: NSLayoutConstraint!
+    
     var viewModel = DetailViewModel()
     
     @IBAction func close(_ sender: Any) {
@@ -38,8 +41,48 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
       //들여올 데이터 셋팅
         updateInfo()
+        prepareAnimation()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        showAnimation()
+        
+    }
+    // animation 준비, 두 Label 화면 밖으로 밀기
+    private func prepareAnimation() {
+        nameLabelCenterX.constant = view.bounds.width
+        costLabelCenterX.constant = view.bounds.width
+    }
+    
+    // 설정된 animation 재생
+    private func showAnimation() {
+        //제자리 복귀
+        nameLabelCenterX.constant = 0
+        costLabelCenterX.constant = 0
+//        UIView.animate(withDuration: 0.3,
+//                       delay: 0.1,
+//                       options: .curveEaseIn,
+//                       animations: {
+//                        self.view.layoutIfNeeded()
+//            }, completion: nil)
+        // 라벨 animation
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.2,
+                       usingSpringWithDamping: 0.6, // 튀어오름
+                       initialSpringVelocity: 2, // 옆으로
+                       options: .curveEaseInOut,
+                       animations: {
+                        self.view.layoutIfNeeded()
+                    }, completion: nil)
+        // 이미지 회전
+        UIView.transition(with: detailImg,
+                          duration: 0.2,
+                          options: .transitionFlipFromLeft,
+                          animations: nil, completion: nil)
     }
 
+    
     func updateInfo() {
         
         if let wishItemInfo = self.viewModel.wishItemInfoFromWishList {

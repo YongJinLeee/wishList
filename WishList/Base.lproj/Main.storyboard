@@ -149,8 +149,11 @@
                     <connections>
                         <outlet property="closed" destination="Ib3-I5-5f8" id="NoB-vC-Aan"/>
                         <outlet property="costLabel" destination="LAw-CG-gdt" id="QGN-33-oPG"/>
+                        <outlet property="costLabelCenterX" destination="xQT-6e-V67" id="cQe-ge-AEY"/>
                         <outlet property="detailImg" destination="i98-xu-6Nq" id="j1P-cX-0SB"/>
+                        <outlet property="imageViewCenterX" destination="APh-38-Nl2" id="uaU-ON-Bio"/>
                         <outlet property="nameLabel" destination="b8z-JR-btr" id="Q4v-st-qXW"/>
+                        <outlet property="nameLabelCenterX" destination="Yt5-c1-Nvq" id="b8t-ii-EjN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B0e-o5-fcU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

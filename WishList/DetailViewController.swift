@@ -51,37 +51,51 @@ class DetailViewController: UIViewController {
     }
     // animation 준비, 두 Label 화면 밖으로 밀기
     private func prepareAnimation() {
-        nameLabelCenterX.constant = view.bounds.width
-        costLabelCenterX.constant = view.bounds.width
+//        nameLabelCenterX.constant = view.bounds.width
+//        costLabelCenterX.constant = view.bounds.width
+    // View 속성 animation
+        nameLabel.transform = CGAffineTransform(translationX: view.bounds.width, y: 0).scaledBy(x: 3, y: 3).rotated(by: 180)
+        costLabel.transform = CGAffineTransform(translationX: view.bounds.width, y: 0).scaledBy(x: 4, y: 4).rotated(by: 180)
+        
+        nameLabel.alpha = 0
+        costLabel.alpha = 0
+        detailImg.alpha = 0
     }
     
     // 설정된 animation 재생
     private func showAnimation() {
-        //제자리 복귀
-        nameLabelCenterX.constant = 0
-        costLabelCenterX.constant = 0
-//        UIView.animate(withDuration: 0.3,
-//                       delay: 0.1,
-//                       options: .curveEaseIn,
-//                       animations: {
-//                        self.view.layoutIfNeeded()
-//            }, completion: nil)
         // 라벨 animation
         UIView.animate(withDuration: 0.5,
-                       delay: 0.2,
-                       usingSpringWithDamping: 0.6, // 튀어오름
-                       initialSpringVelocity: 2, // 옆으로
-                       options: .curveEaseInOut,
-                       animations: {
-                        self.view.layoutIfNeeded()
-                    }, completion: nil)
+                               delay: 0.1,
+                               usingSpringWithDamping: 1, // 튀어오름
+                               initialSpringVelocity: 2, // 옆으로
+                               options: .curveEaseInOut,
+                               animations: {
+                                //제자리 복귀
+                                self.nameLabel.transform = CGAffineTransform.identity
+                                self.nameLabel.alpha = 1
+                            }, completion: nil)
+        
+        UIView.animate(withDuration: 0.7,
+                               delay: 0.4,
+                               usingSpringWithDamping: 1, // 튀어오름
+                               initialSpringVelocity: 2, // 옆으로
+                               options: .curveEaseInOut,
+                               animations: {
+                                self.costLabel.transform = CGAffineTransform.identity
+                                self.costLabel.alpha = 1
+                            }, completion: nil)
+//        nameLabelCenterX.constant = 0
+//        costLabelCenterX.constant = 0
+        
         // 이미지 회전
         UIView.transition(with: detailImg,
-                          duration: 0.2,
+                          duration: 0.5,
                           options: .transitionFlipFromLeft,
-                          animations: nil, completion: nil)
+                          animations: {
+                            self.detailImg.alpha = 1
+                          }, completion: nil)
     }
-
     
     func updateInfo() {
         
@@ -92,6 +106,7 @@ class DetailViewController: UIViewController {
         }
     }
 }
+
 class DetailViewModel {
     //Model
     var wishItemInfoFromWishList: WishItemInfo?

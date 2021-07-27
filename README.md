@@ -12,6 +12,9 @@ Custom Cell을 이용한 기본적인 앱 구현 및 기능 remind
 ----------------
 CollectionaView로 전체 수정(0718)
 
+![스크린샷 2021-07-22 13 44 02](https://user-images.githubusercontent.com/40759743/126590991-833f7a60-1f1a-445b-a57c-cb6189920714.png)
+
+
 ----------------
 
 ### 0715(Refactoring 전 --> 후)

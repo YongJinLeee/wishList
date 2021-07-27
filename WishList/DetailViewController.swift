@@ -44,6 +44,7 @@ class DetailViewController: UIViewController {
         prepareAnimation()
     }
     
+    // 애니메이션 관련 View 표시 함수
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         showAnimation()
